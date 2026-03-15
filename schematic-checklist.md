@@ -41,6 +41,7 @@ off as invalid.
 * [ ] All power inputs fed by correct voltage
 * [ ] Check high-power discrete semiconductors and passives to confirm they can handle expected load
 * [ ] Analog rails filtered/isolated from digital circuitry as needed
+* [ ] Flyback diodes for inductive loads (solenoids etc)
 
 ### Errata
 * [ ] Read errata sheets (if available) for all major devices
@@ -51,12 +52,14 @@ off as invalid.
 ### Digital
 
 * [ ] Signals are correct logic level for input pin
-* [ ] Pullups on all open-drain outputs
+* [ ] Gate pullups/pulldowns present so switching FETs default to a safe state
+* [ ] Pullups on all open-drain outputs (i.e I2C)
 * [ ] Pulldowns on all PECL outputs
 * [ ] Termination on all high-speed signals
 * [ ] AC coupling caps on gigabit transceivers
 * [ ] TX/RX paired correctly for UART, SPI, MGT, etc
 * [ ] Differential pair polarity / pairing correct
+* [ ] 120ohm terminating resistors for CAN at end of bus
 * [ ] Active high/low enable signal polarity correct
 * [ ] I/O banking rules met on FPGAs etc
 * [ ] When using auto-sensing level shifters, ensure the intended receiver doesn't have a pullup/down
@@ -88,6 +91,7 @@ same gain across the whole range.
 
 * [ ] Power outputs (USB etc) current limited
 * [ ] ESD protection on data lines going off board
+* [ ] 5.1k pulldowns on USBC CC lines
 
 ### Debugging / reworkability
 
